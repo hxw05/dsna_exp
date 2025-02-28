@@ -1,4 +1,6 @@
 #include "Compress.h"
+
+// 用于测试输出，可以去掉
 #include "iostream"
 
 unsigned char str2byte(string s) {
@@ -53,7 +55,6 @@ void compress(string filename, int weights[], int kinds) {
         int substrLen = min(8, len - cursor);
         string sub = code_raw.substr(cursor, substrLen);
         writeChar(str2byte(sub), out);
-        cout << sub << "->" << (int) str2byte(sub) << endl;
         compressed_size += sizeof(unsigned char);
         cursor += 8;
     }
@@ -88,7 +89,6 @@ void decompress(string filename, int kinds) {
 
     while (in.read(reinterpret_cast<char *>(&ch), 1)) {
         bitStream += byte2str(ch);
-        cout << (int) ch << "->" << byte2str(ch) << endl;
     }
 
     cout << "output bitstream size:" << bitStream.size() << endl;
