@@ -4,8 +4,9 @@
 #include "global.h"
 #include <fstream>
 
-#define EdgeFilePath "/Users/su/CLionProjects/2024-2025-2/dsna_2/edge.txt"
-#define VexFilePath "/Users/su/CLionProjects/2024-2025-2/dsna_2/vex.txt"
+// 修改为绝对路径
+#define EdgeFilePath "edge.txt"
+#define VexFilePath "vex.txt"
 
 struct EdgeObject {
     char mark1;
